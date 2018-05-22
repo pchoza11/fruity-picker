@@ -1,71 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylsheet" type="text/css" media="screen" href="/Users/paulchoza/Desktop/All-Repos/unit-4-game/assets/css/reset.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/Users/paulchoza/Desktop/All-Repos/unit-4-game/assets/css/style.css" />
-    <script src="/Users/paulchoza/Desktop/All-Repos/unit-4-game/assets/javascript/game.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rando Fruity Picker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/Users/paulchoza/Desktop/All-Repos/unit-4-game/assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/Users/paulchoza/Desktop/All-Repos/unit-4-game/assets/css/style.css" />  
+    <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|East+Sea+Dokdo|Permanent+Marker" rel="stylesheet"> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>Rando Fruit Game!</title>
+    <script src="/Users/paulchoza/Desktop/All-Repos/unit-4-game/assets/javascript/game.js"></script>
 </head>
-
 <body>
 
     <div class="header">
 
-        <h1>Fruity Picker</h1>
+        <h1>Fruity Picker!</h1>
 
     </div>
     
     <div class="rules">
 
-        <p>You will be given a ranndom nuber at the start of the game.</p>
+        <p>~ You will be given a random nuber at the start of the game.</p>
 
-        <p>There are four fruit below. By clicking on a a crystal you will add a specific ammount of points to your total score.</p>
+        <p>~ There are four fruit below. By clicking on a a crystal you will add a specific ammount of points to your total score.</p>
 
-        <p>You win the game by matching your total score to a random, you lose the game if your total score goes above the random number.</p>
+        <p>~ You win the game by matching your total score to a random, you lose the game if your total score goes above the random number.</p>
 
-        <p>The value of each fruit is hidden from you until you click on it.</p>
+        <p>~ The value of each fruit is hidden from you until you click on it.</p>
 
-        <p>Each time the game starts, the game will change the value of each fruit.</p>
+        <p>~ Each time the game starts, the game will change the value of each fruit.</p>
 
     </div>
+
 
     <div class="boards" id="target">
-        <p>Random number</p>
-
-    </div>
-
-    <div class="scoreboard">
-        <p>Wins 0</p>
-
-        <p>Losses 0</p>
-
-    </div>
-
-    <div class="fruits">
-        <img src="assets/images/red-apple.png">
         
-        <img src="assets/images/banana.png">
+        
 
-        <img src="assets/images/watermelon.png">
+    </div>
+    
+    <div class="scoreboard">
+        <p><span id="wins">0</span> Wins</p>
 
-        <img src="assets/images/cherries.png">
+        <p><span id="losses">0</span> Losses</p>
+
+    </div>
+
+    
+    <div class="fruits">
+
+        <img src="assets/images/red-apple.png" class="fruitButton" id="randomApple">
+        
+        <img src="assets/images/banana.png" class="fruitButton" id="randomBanana">
+
+        <img src="assets/images/watermelon.png" class="fruitButton" id="randomWatermelon">
+
+        <img src="assets/images/cherries.png" class="fruitButton" id="randomCherries">
         
     
     </div>
-
+    
     <div id="total">
         <p>Your total score is: </p>
         
     </div>
 
-    <div class="boards" id="yourScore">
+    <div class="boards">
         <p>Button totals</p>
+        <p id="yourScore"></p>
 
     </div>
+
+    <script>
+
+        //Global Variables
+        //===========================================================================
+        var targetNum;
+
+        var crys1;
+        var crys2;
+        var crys3;
+        var crys4;
+        console.log(targetNum)
+
+        
+        //Game counters
+        var win = 0;
+        var loss = 0;
+        var finalScore = 0;
+
+        //Functions - Reusable blocks of code that will be called upon as needed
+        //===========================================================================
+
+        $( window ).on( "load", function(){
+            
+            function startGame() {
+                targetNum = Math.floor(Math.random() * (120 - 20) + 21);
+                crys1 = Math.floor(Math.random() * (12 - 1) + 1);
+                crys2 = Math.floor(Math.random() * (12 - 1) + 1);
+                crys3 = Math.floor(Math.random() * (12 - 1) + 1);
+                crys4 = Math.floor(Math.random() * (12 - 1) + 1);
+                console.log(targetNum)
+
+
+                //Game counters
+                finalScore = 0;
+                $("#yourScore").text(finalScore);
+                $("#target").text(targetNum);
+                $("#randomApple").attr("value", crys1);
+                $("#randomBanana").attr("value", crys2);
+                $("#randomWatermelon").attr("value", crys3);
+                $("#randomCherries").attr("value", crys4);
+            }
+
+            startGame();
+           
+           $(".fruitButton").on("click", function(){ 
+               finalScore += parseInt($(this).attr("value"));
+               console.log(finalScore);
+               $("#yourScore").text(finalScore);
+
+                if ( finalScore === targetNum ) {
+                    win++;
+                    $("#wins").text(win);
+                    alert("You win!");
+                    startGame();
+
+                }
+
+                else if (finalScore > targetNum) {
+                    loss++;
+                    $("#losses").text(loss);
+                    alert("You lose!");
+                    startGame();
+                    
+                }
+
+           })    
+
+
+        })
+    
+    
+    
+    </script>
+
 
 </body>
 
