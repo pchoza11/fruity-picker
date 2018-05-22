@@ -1,0 +1,85 @@
+body {
+    background-image: url("/Users/paulchoza/Desktop/All-Repos/unit-4-game/assets/images/fruity-background-SML.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    margin-right: 200px;
+    background-attachment: fixed;
+    margin: 10px 15px 15px 15px;
+}
+
+
+.clearfix { 
+    overflow: auto;
+}
+
+.header {
+    background-color: deeppink;
+    border-radius: 25px;
+    font-size: 50px;
+    font-family: 'Permanent Marker', cursive;
+    padding: 30px;
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.rules {
+    background-color: lavenderblush;
+    border-radius: 25px;
+    font-size: 34px;
+    font-family: 'East Sea Dokdo', cursive;
+    padding: 20px;
+    width: 500px;
+    margin-bottom: 20px;
+
+}
+
+.boards {
+    width: 250px;
+    height: 100px;
+    margin: 10px;
+    padding: 12px;
+    font-size: 25px;
+    font-family: 'Permanent Marker', cursive;
+    background-color: lightgreen;
+    border-radius: 25px;
+}
+
+#target {
+    float: left;
+    font-size: 50px;
+    text-align: center;
+}
+
+.scoreboard {
+    width: 125px;
+    height: 100px;
+    margin: 10px;
+    padding: 12px;
+    font-size: 25px;
+    font-family: 'Permanent Marker', cursive;
+    background-color: dodgerblue;
+    border-radius: 25px;
+    float: left;
+}
+
+.fruits {
+    clear: both;
+    width: 900px;
+
+}
+
+img {
+    width: 165px;
+    margin: 5px;
+}
+
+#total {
+    width: 250px;
+    height: 25px;
+    margin: 10px;
+    padding: 2px 2px 2px 16px;
+    font-size: 25px;
+    font-family: 'East Sea Dokdo', cursive;
+    background-color: lightgreen;
+    border-radius: 25px;
+}
