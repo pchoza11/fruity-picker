@@ -1,5 +1,5 @@
 body {
-    background-image: url("/Users/paulchoza/Desktop/All-Repos/unit-4-game/assets/images/fruity-background-SML.jpg");
+    background-image: url("../images/fruity-background-SML.jpg");
     background-repeat: no-repeat;
     background-position: right top;
     margin-right: 200px;

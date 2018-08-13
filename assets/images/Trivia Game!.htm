@@ -1,0 +1,106 @@
+<!DOCTYPE <!doctype>
+<!-- saved from url=(0064)file:///Users/paulchoza/Desktop/All-Repos/Trivia-Game/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trivia Game!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./Trivia Game!_files/reset.css">    
+    <link rel="stylesheet" type="text/css" media="screen" href="./Trivia Game!_files/style.css">
+    <link href="./Trivia Game!_files/css" rel="stylesheet">
+    <script src="./Trivia Game!_files/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script></head><body>"
+    <script src="./Trivia Game!_files/app.js"></script>
+
+
+
+
+    <div class="container">
+
+        <h1 class="Jumbotron" <strong="">MLB Trivia Game</h1>
+
+        <div id="start-page">
+
+            <button id="start-button">Click to PLAY BALL!!</button>
+
+        </div>
+
+        <div id="trivia-page">
+
+            <h3 id="countdown">Time Remaining: <span id="timeleft"></span> Seconds</h3>
+            <br>            
+
+            <h3 id="">Who won National League Rookie of the Year in the 2017 MLB season?</h3>
+
+            <form>
+                <input type="radio" name="answer-1" value="bryce harper" checked=""> Bryce Harper<br>
+                <input type="radio" name="answer-1" value="jose altuve"> Jose Altuve<br>
+                <input type="radio" name="answer-1" value="aaron judge"> Aaron Judge<br>
+                <input type="radio" name="answer-1" value="cody belinger"> Cody Belinger 
+            </form> 
+            <br>
+    
+            <h3 id="">What MLB baseball stadium has the highest seating capacity?</h3>
+
+                <form>
+                    <input type="radio" name="answer-2" value="yankee stadium" checked=""> Yankee Stadium<br>
+                    <input type="radio" name="answer-2" value="dodger stadium"> Dodger Stadium<br>
+                    <input type="radio" name="answer-2" value="wrigley field"> Wrigley Field<br>
+                    <input type="radio" name="answer-2" value="fenway park"> Fenway Park 
+                </form> 
+            <br>                
+    
+            <h3 id="">What is the Boston Red Sox mascot?</h3>
+
+                <form>
+                    <input type="radio" name="answer-3" value="a foot" checked=""> A Foot<br>
+                    <input type="radio" name="answer-3" value="green monster"> A Green Monster<br>
+                    <input type="radio" name="answer-3" value="a sock"> A Sock<br>
+                    <input type="radio" name="answer-3" value="fcolonial era patriot"> A Colonial Era Patriot 
+                </form> 
+            <br>                
+    
+            <h3 id="">Where is Yasiel Puig from?</h3>
+
+                <form>
+                    <input type="radio" name="answer-4" value="toronto" checked=""> Toronto<br>
+                    <input type="radio" name="answer-4" value="domincan republic"> Domincan Republic<br>
+                    <input type="radio" name="answer-4" value="los angeles"> Los Angeles<br>
+                    <input type="radio" name="answer-4" value="cuba"> Cuba 
+                </form> 
+
+                <br>
+
+            <button>Done</button>
+
+
+        </div>
+
+        <div id="results-page">
+
+            <h3>All Done!</h3>
+
+            <h4 id="correct">Correct Answers: <span id="number-correct"></span></h4>
+            <h4 id="wrong">Incorrect Answers: <span id="number-wrong"></span></h4>
+            <h4 id="unanswered">Unanswered: <span id="not-answered"></span></h4>
+            
+        
+        </div>
+
+        
+
+
+    </div>
+
+
+
+    <script>
+
+        $(document).ready(function(){
+            setInterval(function(){
+                $(".jumbotron").toggleClass('active');
+            }, 500);
+        });
+    
+    </script>
+
+</body></html>
